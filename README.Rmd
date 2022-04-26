@@ -15,10 +15,12 @@ knitr::opts_chunk$set(
 
 ```{r, include = FALSE}
 
-lesson_title <- "Github Repo Template for a Pkgdown Lesson"
-lesson_description <- "This github repository serves as a template for a short-form workshop, lesson, or course to be shared in the form of a pkgdown website with slides rendered by xaringan. This description text for the package and lesson should be written in `README.Rmd`, which, when knit, will then update the package's `DESCRIPTION` file."
+lesson_title <- "Creating a Personal Website (Using Quarto)"
+lesson_description <- "Quarto is a new and versatile tool for writing content in markdown and publishing to a multitude of formats. This workshop will operate as a _Getting Started_ guide for using Quarto to create a personal website. Along the way, attendees will learn about other uses of Quarto and using GitHub Actions for continuous deployment."
 lesson_keywords <- c("Open Educational Resources", 
                      "Research Support Skills", 
+                     "Literate Programming",
+                     "Quarto", 
                      "Version Control", 
                      "Workshop")
 folder_name <- basename(usethis::proj_get())
@@ -40,8 +42,7 @@ jsonlite::write_json(zenodo_json, ".zenodo.json",
 
 <!-- badges: start -->
 
-[![GitHub Actions pkgdown workflow](https://github.com/uf-repro/lesson-template/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/lesson-template/actions?query=workflow%3Apkgdown)
-[![DOI](https://zenodo.org/badge/301144592.svg)](https://zenodo.org/badge/latestdoi/301144592)
+[![GitHub Actions pkgdown workflow](https://github.com/uf-repro/quarto-website-intro/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/quarto-website-intro/actions?query=workflow%3Apkgdown)
 
 <!-- badges: end -->
 
@@ -51,12 +52,12 @@ jsonlite::write_json(zenodo_json, ".zenodo.json",
 
 ## Prerequisites
 ```{r, include = FALSE}
-prereqs <- c("how to fold cheese", 
-             "how to fold cheesecloth")
+prereqs <- c("have some familiarity making *repos* and *commits*", 
+             "know how to synchronize repos from your computer to GitHub")
 prereqs_text <- paste0("* ", prereqs, collapse = "\n")
 desc::desc_set("prerequisites", prereqs_text)
 
-prior_course <- "Origami for Cheesemakers 101"
+prior_course <- "https://uf-repro.github.io/friendly-github-intro/"
 desc::desc_set("priorCourse", prior_course)
 ```
 
@@ -69,9 +70,10 @@ Such as via `r prior_course`
 ## Learning Outcomes
 
 ```{r, include = FALSE}
-learning_outcomes <- c("something", 
-                       "something else",
-                       "thing 3")
+learning_outcomes <- c("describe the principles of Quarto documents", 
+                       "create a basic website in Quarto",
+                       "describe the workflow for continuous deployment", 
+                       "deploy a Quarto website using GitHub Actions")
 outcomes_text <- paste0("* ", learning_outcomes, collapse = "\n")
 desc::desc_set("learningOutcomes", outcomes_text)
 ```

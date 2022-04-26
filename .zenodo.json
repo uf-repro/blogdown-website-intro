@@ -1,5 +1,5 @@
 {
-  "title": "Github Repo Template for a Pkgdown Lesson",
+  "title": "Creating a Personal Website (Using Quarto)",
   "creators": [
     {
       "affiliation": "University of Florida",
@@ -7,10 +7,12 @@
       "orcid": "0000-0002-8630-1458"
     }
   ],
-  "description": "This github repository serves as a template for a short-form workshop, lesson, or course to be shared in the form of a pkgdown website with slides rendered by xaringan. This description text for the package and lesson should be written in `README.Rmd`, which, when knit, will then update the package's `DESCRIPTION` file.",
+  "description": "Quarto is a new and versatile tool for writing content in markdown and publishing to a multitude of formats. This workshop will operate as a _Getting Started_ guide for using Quarto to create a personal website. Along the way, attendees will learn about other uses of Quarto and using GitHub Actions for continuous deployment.",
   "keywords": [
     "Open Educational Resources",
     "Research Support Skills",
+    "Literate Programming",
+    "Quarto",
     "Version Control",
     "Workshop"
   ],

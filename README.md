@@ -1,37 +1,37 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Github Repo Template for a Pkgdown Lesson
+# Creating a Personal Website (Using Quarto)
 
 <!-- badges: start -->
 
 [![GitHub Actions pkgdown
-workflow](https://github.com/uf-repro/lesson-template/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/lesson-template/actions?query=workflow%3Apkgdown)
-[![DOI](https://zenodo.org/badge/301144592.svg)](https://zenodo.org/badge/latestdoi/301144592)
+workflow](https://github.com/uf-repro/quarto-website-intro/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/quarto-website-intro/actions?query=workflow%3Apkgdown)
 
 <!-- badges: end -->
 
 ## Description
 
-This github repository serves as a template for a short-form workshop,
-lesson, or course to be shared in the form of a pkgdown website with
-slides rendered by xaringan. This description text for the package and
-lesson should be written in `README.Rmd`, which, when knit, will then
-update the package’s `DESCRIPTION` file.
+Quarto is a new and versatile tool for writing content in markdown and
+publishing to a multitude of formats. This workshop will operate as a
+*Getting Started* guide for using Quarto to create a personal website.
+Along the way, attendees will learn about other uses of Quarto and using
+GitHub Actions for continuous deployment.
 
 ## Prerequisites
 
 This lesson assumes you know:
 
-  - how to fold cheese
-  - how to fold cheesecloth
+-   have some familiarity making *repos* and *commits*
+-   know how to synchronize repos from your computer to GitHub
 
-Such as via Origami for Cheesemakers 101
+Such as via <https://uf-repro.github.io/friendly-github-intro/>
 
 ## Learning Outcomes
 
 By the end of the workshop, participants will be able to:
 
-  - something
-  - something else
-  - thing 3
+-   describe the principles of Quarto documents
+-   create a basic website in Quarto
+-   describe the workflow for continuous deployment
+-   deploy a Quarto website using GitHub Actions
