@@ -1,6 +1,6 @@
 Package: quarto.website.intro
 Title: Creating a Personal Website (Using Quarto)
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: 
     person(given = "Hao",
            family = "Ye",
@@ -29,3 +29,4 @@ learningOutcomes: * describe the principles of Quarto documents
 prerequisites: * have some familiarity making *repos* and *commits*
  * know how to synchronize repos from your computer to GitHub
 priorCourse: https://uf-repro.github.io/friendly-github-intro/
+X-schema.org-keywords: Open Educational Resources, Research Support Skills, Literate Programming, Quarto, Version Control, Workshop

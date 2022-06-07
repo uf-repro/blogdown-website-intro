@@ -17,25 +17,22 @@ knitr::opts_chunk$set(
 
 lesson_title <- "Creating a Personal Website (Using Quarto)"
 lesson_description <- "Quarto is a new and versatile tool for writing content in markdown and publishing to a multitude of formats. This workshop will operate as a _Getting Started_ guide for using Quarto to create a personal website. Along the way, attendees will learn about other uses of Quarto and using GitHub Actions for continuous deployment."
+lesson_version <- "0.1.0"
 lesson_keywords <- c("Open Educational Resources", 
                      "Research Support Skills", 
                      "Literate Programming",
                      "Quarto", 
                      "Version Control", 
                      "Workshop")
+
 folder_name <- basename(usethis::proj_get())
 package_name <- gsub("-", ".", folder_name)
 
 desc::desc_set(Package = package_name, 
                Title = lesson_title, 
-               Description = lesson_description)
-
-zenodo_json <- jsonlite::read_json(".zenodo.json")
-zenodo_json$title <- lesson_title
-zenodo_json$description <- lesson_description
-zenodo_json$keywords <- as.list(lesson_keywords)
-jsonlite::write_json(zenodo_json, ".zenodo.json", 
-                     auto_unbox = TRUE, pretty = TRUE)
+               Description = lesson_description, 
+               Version = lesson_version, 
+               "X-schema.org-keywords" = paste(lesson_keywords, collapse = ", "))
 ```
 
 # `r lesson_title`
@@ -81,3 +78,8 @@ desc::desc_set("learningOutcomes", outcomes_text)
 By the end of the workshop, participants will be able to:
 
 `r outcomes_text`
+
+
+```{r make cff file, include = FALSE}
+cffr::cff_write(keys = list("type" = "lesson"))
+```
