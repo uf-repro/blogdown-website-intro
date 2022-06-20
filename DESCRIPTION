@@ -1,5 +1,5 @@
-Package: quarto.website.intro
-Title: Creating a Personal Website (Using Quarto)
+Package: blogdown.website.intro
+Title: Creating a Personal Website (Using Blogdown)
 Version: 0.1.0
 Authors@R: 
     person(given = "Hao",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "haoye@ufl.edu",
            comment = c(ORCID = "0000-0002-8630-1458"))
-Description: Quarto is a new and versatile tool for writing content in markdown and publishing to a multitude of formats. This workshop will operate as a _Getting Started_ guide for using Quarto to create a personal website. Along the way, attendees will learn about other uses of Quarto and using GitHub Actions for continuous deployment.
+Description: Blogdown is an extension of R Markdown, focusing on creating websites. This workshop will operate as a _Getting Started_ guide for creating a website in Blogdown, using GitHub Pages to host the website, and GitHub Actions for continuous deployment.
 License: CC BY 4.0
 Encoding: UTF-8
 LazyData: true
@@ -22,11 +22,11 @@ Imports:
     xaringanthemer,
     usethis
 title: Github Repo Template for a Pkgdown Lesson
-learningOutcomes: * describe the principles of Quarto documents
- * create a basic website in Quarto
+learningOutcomes: * create a basic website using Blogdown
+ * host a website on GitHub Pages
  * describe the workflow for continuous deployment
- * deploy a Quarto website using GitHub Actions
+ * deploy a Blogdown website using GitHub Actions
 prerequisites: * have some familiarity making *repos* and *commits*
  * know how to synchronize repos from your computer to GitHub
 priorCourse: https://uf-repro.github.io/friendly-github-intro/
-X-schema.org-keywords: Open Educational Resources, Research Support Skills, Literate Programming, Quarto, Version Control, Workshop
+X-schema.org-keywords: Open Educational Resources, Research Support Skills, Literate Programming, Blogdown, GitHub, GitHub Actions, Version Control, Workshop

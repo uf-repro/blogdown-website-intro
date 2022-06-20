@@ -4,15 +4,14 @@
 # -----------------------------------------------------------
  
 cff-version: 1.2.0
-message: 'To cite package "quarto.website.intro" in publications use:'
+message: 'To cite package "blogdown.website.intro" in publications use:'
 type: lesson
 license: CC-BY-4.0
-title: 'quarto.website.intro: Creating a Personal Website (Using Quarto)'
+title: 'blogdown.website.intro: Creating a Personal Website (Using Blogdown)'
 version: 0.1.0
-abstract: Quarto is a new and versatile tool for writing content in markdown and publishing
-  to a multitude of formats. This workshop will operate as a _Getting Started_ guide
-  for using Quarto to create a personal website. Along the way, attendees will learn
-  about other uses of Quarto and using GitHub Actions for continuous deployment.
+abstract: Blogdown is an extension of R Markdown, focusing on creating websites. This
+  workshop will operate as a _Getting Started_ guide for creating a website in Blogdown,
+  using GitHub Pages to host the website, and GitHub Actions for continuous deployment.
 authors:
 - family-names: Ye
   given-names: Hao
@@ -20,17 +19,16 @@ authors:
   orcid: https://orcid.org/0000-0002-8630-1458
 preferred-citation:
   type: manual
-  title: 'quarto.website.intro: Creating a Personal Website (Using Quarto)'
+  title: 'blogdown.website.intro: Creating a Personal Website (Using Blogdown)'
   authors:
   - family-names: Ye
     given-names: Hao
     email: haoye@ufl.edu
     orcid: https://orcid.org/0000-0002-8630-1458
   version: 0.1.0
-  abstract: Quarto is a new and versatile tool for writing content in markdown and
-    publishing to a multitude of formats. This workshop will operate as a _Getting
-    Started_ guide for using Quarto to create a personal website. Along the way, attendees
-    will learn about other uses of Quarto and using GitHub Actions for continuous
+  abstract: Blogdown is an extension of R Markdown, focusing on creating websites.
+    This workshop will operate as a _Getting Started_ guide for creating a website
+    in Blogdown, using GitHub Pages to host the website, and GitHub Actions for continuous
     deployment.
   contact:
   - family-names: Ye
@@ -41,7 +39,9 @@ preferred-citation:
   - Open Educational Resources
   - Research Support Skills
   - Literate Programming
-  - Quarto
+  - Blogdown
+  - GitHub
+  - GitHub Actions
   - Version Control
   - Workshop
   license: CC-BY-4.0
@@ -55,7 +55,9 @@ keywords:
 - Open Educational Resources
 - Research Support Skills
 - Literate Programming
-- Quarto
+- Blogdown
+- GitHub
+- GitHub Actions
 - Version Control
 - Workshop
 references:

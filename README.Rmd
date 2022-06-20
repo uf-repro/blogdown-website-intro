@@ -15,13 +15,15 @@ knitr::opts_chunk$set(
 
 ```{r, include = FALSE}
 
-lesson_title <- "Creating a Personal Website (Using Quarto)"
-lesson_description <- "Quarto is a new and versatile tool for writing content in markdown and publishing to a multitude of formats. This workshop will operate as a _Getting Started_ guide for using Quarto to create a personal website. Along the way, attendees will learn about other uses of Quarto and using GitHub Actions for continuous deployment."
+lesson_title <- "Creating a Personal Website (Using Blogdown)"
+lesson_description <- "Blogdown is an extension of R Markdown, focusing on creating websites. This workshop will operate as a _Getting Started_ guide for creating a website in Blogdown, using GitHub Pages to host the website, and GitHub Actions for continuous deployment."
 lesson_version <- "0.1.0"
 lesson_keywords <- c("Open Educational Resources", 
                      "Research Support Skills", 
                      "Literate Programming",
-                     "Quarto", 
+                     "Blogdown", 
+                     "GitHub", 
+                     "GitHub Actions", 
                      "Version Control", 
                      "Workshop")
 
@@ -39,7 +41,7 @@ desc::desc_set(Package = package_name,
 
 <!-- badges: start -->
 
-[![GitHub Actions pkgdown workflow](https://github.com/uf-repro/quarto-website-intro/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/quarto-website-intro/actions?query=workflow%3Apkgdown)
+[![GitHub Actions pkgdown workflow](https://github.com/uf-repro/blogdown-website-intro/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/blogdown-website-intro/actions?query=workflow%3Apkgdown)
 
 <!-- badges: end -->
 
@@ -67,10 +69,10 @@ Such as via `r prior_course`
 ## Learning Outcomes
 
 ```{r, include = FALSE}
-learning_outcomes <- c("describe the principles of Quarto documents", 
-                       "create a basic website in Quarto",
+learning_outcomes <- c("create a basic website using Blogdown",
+                       "host a website on GitHub Pages", 
                        "describe the workflow for continuous deployment", 
-                       "deploy a Quarto website using GitHub Actions")
+                       "deploy a Blogdown website using GitHub Actions")
 outcomes_text <- paste0("* ", learning_outcomes, collapse = "\n")
 desc::desc_set("learningOutcomes", outcomes_text)
 ```

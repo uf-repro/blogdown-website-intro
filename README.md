@@ -1,22 +1,21 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Creating a Personal Website (Using Quarto)
+# Creating a Personal Website (Using Blogdown)
 
 <!-- badges: start -->
 
 [![GitHub Actions pkgdown
-workflow](https://github.com/uf-repro/quarto-website-intro/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/quarto-website-intro/actions?query=workflow%3Apkgdown)
+workflow](https://github.com/uf-repro/blogdown-website-intro/workflows/pkgdown/badge.svg)](https://github.com/uf-repro/blogdown-website-intro/actions?query=workflow%3Apkgdown)
 
 <!-- badges: end -->
 
 ## Description
 
-Quarto is a new and versatile tool for writing content in markdown and
-publishing to a multitude of formats. This workshop will operate as a
-*Getting Started* guide for using Quarto to create a personal website.
-Along the way, attendees will learn about other uses of Quarto and using
-GitHub Actions for continuous deployment.
+Blogdown is an extension of R Markdown, focusing on creating websites.
+This workshop will operate as a *Getting Started* guide for creating a
+website in Blogdown, using GitHub Pages to host the website, and GitHub
+Actions for continuous deployment.
 
 ## Prerequisites
 
@@ -31,7 +30,7 @@ Such as via <https://uf-repro.github.io/friendly-github-intro/>
 
 By the end of the workshop, participants will be able to:
 
--   describe the principles of Quarto documents
--   create a basic website in Quarto
+-   create a basic website using Blogdown
+-   host a website on GitHub Pages
 -   describe the workflow for continuous deployment
--   deploy a Quarto website using GitHub Actions
+-   deploy a Blogdown website using GitHub Actions
