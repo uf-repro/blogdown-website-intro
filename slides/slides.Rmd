@@ -160,7 +160,6 @@ The `renv` package will capture all the needed packages to build our website and
 
 ```{r, eval = FALSE}
 renv::init()
-renv::snapshot()
 ```
 
 ---
@@ -188,7 +187,49 @@ class: middle, center
 # Demo
 
 ---
+class: inverse, center, middle
 
+# Technical Machinery
+
+---
+
+
+
+---
+# GitHub Pages Configuration
+
+In the GitHub page, navigate to "Settings"
+
+```{r, echo = FALSE, out.width = "70%"}
+#| fig.alt = "GitHub Settings page for a repository. The settings tab is circled with a magenta oval and labeled with '1.' in magenta text."
+knitr::include_graphics("gh-settings.png", dpi = 200)
+```
+
+---
+# GitHub Pages Configuration
+
+then select "Pages"
+
+```{r, echo = FALSE, out.width = "70%"}
+#| fig.alt = "GitHub Settings page fora repository. The "Pages" menu item on the left is circled with a magenta oval and labeled with '2.' in magenta text."
+knitr::include_graphics("gh-settings-pages.png", dpi = 200)
+```
+
+---
+# GitHub Pages Configuration
+
+then select the "gh-pages" branch as the source.
+
+```{r, echo = FALSE, out.width = "70%"}
+#| fig.alt = "GitHub Settings page for a repository. In the 'Source' setting, the 'Branch' pulldown menu is open and set to 'gh-pages' and is circled with a magenta oval and labeled with '3.' in magenta text."
+knitr::include_graphics("gh-settings-pages-source.png", dpi = 200)
+```
+
+
+---
+class: inverse, center, middle
+
+# 
  
 ---
 # Thanks
