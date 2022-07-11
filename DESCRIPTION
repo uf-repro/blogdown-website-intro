@@ -1,6 +1,6 @@
 Package: blogdown.website.intro
 Title: Creating a Personal Website (Using Blogdown)
-Version: 0.5.0
+Version: 0.9.0
 Authors@R: 
     person(given = "Hao",
            family = "Ye",
@@ -30,3 +30,4 @@ prerequisites: * have some familiarity making *repos* and *commits*
  * know how to synchronize repos from your computer to GitHub
 priorCourse: https://uf-repro.github.io/friendly-github-intro/
 X-schema.org-keywords: Open Educational Resources, Research Support Skills, Literate Programming, Blogdown, GitHub, GitHub Actions, Version Control, Workshop
+URL: https://github.com/uf-repro/blogdown-website-intro
