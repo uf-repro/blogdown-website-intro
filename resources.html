@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">blogdown.website.intro</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.0</span>
       </span>
     </div>
 
@@ -40,6 +40,12 @@
      
   </a>
 </li>
+<li>
+  <a href="https://github.com/uf-repro/blogdown-website-intro/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -55,8 +61,19 @@
 <div id="additional-resources--readings" class="section level1">
 <div class="section level2">
 <h2 id="troubleshooting">Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting"></a></h2>
-<p>Having build problems? You may need to update <code>{{blogdown}}</code> or <code>{{Hugo}}</code> 1. Install the latest version of blogdown. <code>{r, eval = FALSE} install.packages("blogdown")</code> 2. Use blogdown to install Hugo. <code>{r, eval = FALSE} blogdown::install_hugo()</code> 3. Open <code>.Rprofile</code> and set the hugo version to the version you just installed. 4. Session -&gt; Restart R. 5. Update the <code>renv</code> snapshot. <code>{r, eval = FALSE} renv::snapshot()</code> 6. Test <code>{r, eval = FALSE} blogdown::serve_site()</code> 7. Commit and Push.</p>
-</div>
+<p>Having build problems? You may need to update <code>{{blogdown}}</code> or <code>{{Hugo}}</code></p>
+<ol style="list-style-type: decimal"><li>Install the latest version of blogdown.<br>
+```{r, eval = FALSE} install.packages(“blogdown”)</li></ol><pre><code>2. Use blogdown to install Hugo.  
+```{r, eval = FALSE}
+blogdown::install_hugo()</code></pre>
+<ol start="3" style="list-style-type: decimal"><li>Open <code>.Rprofile</code> and set the hugo version to the version you just installed.</li>
+<li>Session -&gt; Restart R.</li>
+<li>Update the <code>renv</code> snapshot.<br>
+```{r, eval = FALSE} renv::snapshot()</li>
+</ol><pre><code>6. Test  
+```{r, eval = FALSE}
+blogdown::serve_site()</code></pre>
+<ol start="7" style="list-style-type: decimal"><li>Commit and Push.</li></ol></div>
 <div class="section level2">
 <h2 id="reference-documentation">Reference Documentation<a class="anchor" aria-label="anchor" href="#reference-documentation"></a></h2>
 <ul><li>

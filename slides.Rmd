@@ -115,12 +115,12 @@ class: inverse, center, middle
 ---
 # Choose a name
 
-We are going to use GitHub Pages to host our website.
-
 The address will be https://{username}.github.io/{repo}
-  e.g for my username `ha0ye` and repo `my-site`, the eventual website address will be https://ha0ye.github.io/my-site/
 
-You can also host at https://{username}.github.io/ ; choose `{username}.github.io` as the repo name.
+e.g. for my username `ha0ye` and repo `my-site`, the eventual website address will be https://ha0ye.github.io/my-site/
+
+You can also host at https://{username}.github.io/
+- choose `{username}.github.io` as the repo name.
 
 ---
 # New RStudio Project
@@ -134,10 +134,11 @@ You can also host at https://{username}.github.io/ ; choose `{username}.github.i
 # Create Blogdown Site
 
 ```{r, eval = FALSE}
-blogdown::new_site(theme = "hugo-apero/hugo-apero", 
-                   format = "toml",
-                   sample = FALSE,
-                   empty_dirs = TRUE)
+blogdown::new_site(
+    theme = "hugo-apero/hugo-apero", 
+    format = "toml",
+    sample = FALSE,
+    empty_dirs = TRUE)
 ```
 
 ---
@@ -270,15 +271,97 @@ This means, when we update the contents in GitHub, it will render and update the
 # Workflow
 
 Suggested website workflow:
-1. start live previews with `blogdown::serve_site()`
-2. make changes to the website
-3. commit changes and push to GitHub.
+1. Open the RStudio project for your website.
+2. Start live previews with `blogdown::serve_site()`
+3. Make changes to the website
+4. Commit changes and push to GitHub.
+
+---
+class: middle, center
+
+# Demo
 
 ---
 class: inverse, center, middle
 
-# 
- 
+# Customization
+
+---
+# Menus
+
+`config.toml` also determines the top-level menu of your website and what the links are.
+
+You can customize the links, including adding your own or removing the defaults.
+
+See [the doc page](https://hugo-apero-docs.netlify.app/start/site-config/) for more information.
+
+---
+# Static Files
+
+Files that you want accessible to your website, but not processed through Hugo should go in the `/static/` folder.
+
+* it is common to put images in `/static/img/`.
+* The file `/static/img/image.jpg` becomes https://ha0ye.github.io/blogdown-demo/img/image.jpg on the website.
+
+---
+# Fonts and Colors
+
+You can choose from among the theme's built-in fonts and colors by editing `config.toml`.
+
+Customization is available, but will require you to go to extra effort to specify the exact colors and fonts to use.
+
+See [the doc page](https://hugo-apero-docs.netlify.app/start/site-config/) for more information.
+
+---
+class: middle, center
+
+# Demo
+
+---
+class: inverse, center, middle
+
+# Content
+
+---
+# Basics
+
+The contents of the website are determined by the files in the `content/` folder.
+
+Each folder corresponds to a section of the website, and has a page that can be linked.
+
+For example, the `about/` folder contains files to create the  https://ha0ye.github.io/blogdown-demo/about page.
+
+---
+# Sections
+
+Each section has a `_index.md` file that contains metadata about how the section will be formatted, and sometimes some descriptive text.
+
+This information is in a **yaml** section at the top of the markdown file that begins and ends with
+
+```
+---
+```
+
+---
+# Pages
+
+Within each section, individual pages can be individual markdown files, or folders with an `index.md` file.
+
+---
+# Styling
+
+There are built-in layouts that determine how a page is formatted.
+You can set this in the `layout: ` field in the YAML header.
+
+For more info, see the examples in the template or the docs on 
+* [section configuration](https://hugo-apero-docs.netlify.app/start/section-config/)
+* [page configuration](https://hugo-apero-docs.netlify.app/start/page-config/)
+
+---
+class: middle, center
+
+# Demo
+
 ---
 # Thanks
 

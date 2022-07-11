@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">blogdown.website.intro</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.0</span>
       </span>
     </div>
 
@@ -37,6 +37,12 @@
 <li>
   <a href="index.html">
     <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/uf-repro/blogdown-website-intro/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -94,7 +100,9 @@
 </ul></div>
 <div class="section level2">
 <h2 id="creating-a-new-site">Creating a new site<a class="anchor" aria-label="anchor" href="#creating-a-new-site"></a></h2>
-<ul><li><p>Choose a name We are going to use GitHub Pages to host our website. The address will be <a href="https://%7Busername%7D.github.io/%7Brepo%7D" class="external-link uri">https://{username}.github.io/{repo}</a> e.g for my username <code>ha0ye</code> and repo <code>my-site</code>, the eventual website address will be <a href="https://ha0ye.github.io/my-site/" class="external-link uri">https://ha0ye.github.io/my-site/</a> You can also host at <a href="https://%7Busername%7D.github.io/" class="external-link uri">https://{username}.github.io/</a> ; choose <code>{username}.github.io</code> as the repo name.</p></li>
+<ul><li>
+<p>Choose a name The address will be <a href="https://%7Busername%7D.github.io/%7Brepo%7D" class="external-link uri">https://{username}.github.io/{repo}</a> e.g. for my username <code>ha0ye</code> and repo <code>my-site</code>, the eventual website address will be <a href="https://ha0ye.github.io/my-site/" class="external-link uri">https://ha0ye.github.io/my-site/</a> You can also host at <a href="https://%7Busername%7D.github.io/" class="external-link uri">https://{username}.github.io/</a></p>
+<ul><li>choose <code>{username}.github.io</code> as the repo name.</li></ul></li>
 <li>
 <p>New RStudio Project</p>
 <ol style="list-style-type: decimal"><li>Open RStudio.</li>
@@ -108,10 +116,11 @@
 <li>
 <p>Create Blogdown Site</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">blogdown</span><span class="fu">::</span><span class="fu">new_site</span><span class="op">(</span>theme <span class="op">=</span> <span class="st">"hugo-apero/hugo-apero"</span>, </span>
-<span>                   format <span class="op">=</span> <span class="st">"toml"</span>,</span>
-<span>                   sample <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>                   empty_dirs <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">blogdown</span><span class="fu">::</span><span class="fu">new_site</span><span class="op">(</span></span>
+<span>    theme <span class="op">=</span> <span class="st">"hugo-apero/hugo-apero"</span>, </span>
+<span>    format <span class="op">=</span> <span class="st">"toml"</span>,</span>
+<span>    sample <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>    empty_dirs <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </li>
 <li>
 <p>Set <code>baseURL</code> Open <code>config.toml</code>. There are a number of configuration options here. Right now, set baseURL to the eventual URL of your site. For example:</p>
@@ -157,18 +166,42 @@
 <li><p>GitHub Actions GitHub Actions lets us do workflow automation on GitHub. Our provided script will setup an R environment to build our website, and then put the website files into the <code>gh-pages</code> branch. This means, when we update the contents in GitHub, it will render and update the website automatically.</p></li>
 <li>
 <p>Workflow Suggested website workflow:</p>
-<ol style="list-style-type: decimal"><li>start live previews with <code>blogdown::serve_site()</code>
+<ol style="list-style-type: decimal"><li>Open the RStudio project for your website.</li>
+<li>Start live previews with <code>blogdown::serve_site()</code>
 </li>
-<li>make changes to the website</li>
-<li>commit changes and push to GitHub.</li>
+<li>Make changes to the website</li>
+<li>Commit changes and push to GitHub.</li>
 </ol></li>
+<li><p>Demo</p></li>
 </ul></div>
-<div class="section level2"><h2 id="section"></h2></div>
 <div class="section level2">
-<h2 id="thanks">Thanks<a class="anchor" aria-label="anchor" href="#thanks"></a></h2>
-<ul><li>Let me know what content you’d like to see</li>
-<li>Contact me for additional questions or consultation requests!</li>
-<li>Check back in on the libguide for more modules and contact info:<ul><li><a href="https://guides.uflib.ufl.edu/reproducibility" class="external-link uri">https://guides.uflib.ufl.edu/reproducibility</a></li></ul></li>
+<h2 id="customization">Customization<a class="anchor" aria-label="anchor" href="#customization"></a></h2>
+<ul><li>Menus <code>config.toml</code> also determines the top-level menu of your website and what the links are. You can customize the links, including adding your own or removing the defaults. See <a href="https://hugo-apero-docs.netlify.app/start/site-config/" class="external-link">the doc page</a> for more information.</li>
+<li>Static Files Files that you want accessible to your website, but not processed through Hugo should go in the <code>/static/</code> folder.<ul><li>it is common to put images in <code>/static/img/</code>.</li>
+<li>The file <code>/static/img/image.jpg</code> becomes <a href="https://ha0ye.github.io/blogdown-demo/img/image.jpg" class="external-link uri">https://ha0ye.github.io/blogdown-demo/img/image.jpg</a> on the website.</li>
+</ul></li>
+<li>Fonts and Colors You can choose from among the theme’s built-in fonts and colors by editing <code>config.toml</code>. Customization is available, but will require you to go to extra effort to specify the exact colors and fonts to use. See <a href="https://hugo-apero-docs.netlify.app/start/site-config/" class="external-link">the doc page</a> for more information.</li>
+<li>Demo</li>
+</ul></div>
+<div class="section level2">
+<h2 id="content">Content<a class="anchor" aria-label="anchor" href="#content"></a></h2>
+<ul><li><p>Basics The contents of the website are determined by the files in the <code>content/</code> folder. Each folder corresponds to a section of the website, and has a page that can be linked. For example, the <code>about/</code> folder contains files to create the <a href="https://ha0ye.github.io/blogdown-demo/about" class="external-link uri">https://ha0ye.github.io/blogdown-demo/about</a> page.</p></li>
+<li>
+<p>Sections Each section has a <code>_index.md</code> file that contains metadata about how the section will be formatted, and sometimes some descriptive text. This information is in a <strong>yaml</strong> section at the top of the markdown file that begins and ends with</p>
+<pre><code></code></pre>
+</li>
+<li><p>Pages Within each section, individual pages can be individual markdown files, or folders with an <code>index.md</code> file.</p></li>
+<li>
+<p>Styling There are built-in layouts that determine how a page is formatted. You can set this in the <code>layout:</code> field in the YAML header. For more info, see the examples in the template or the docs on</p>
+<ul><li><a href="https://hugo-apero-docs.netlify.app/start/section-config/" class="external-link">section configuration</a></li>
+<li><a href="https://hugo-apero-docs.netlify.app/start/page-config/" class="external-link">page configuration</a></li>
+</ul></li>
+<li><p>Demo ## Thanks</p></li>
+<li><p>Let me know what content you’d like to see</p></li>
+<li><p>Contact me for additional questions or consultation requests!</p></li>
+<li>
+<p>Check back in on the libguide for more modules and contact info:</p>
+<ul><li><a href="https://guides.uflib.ufl.edu/reproducibility" class="external-link uri">https://guides.uflib.ufl.edu/reproducibility</a></li></ul></li>
 </ul></div>
 </div>
 
