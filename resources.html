@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">blogdown.website.intro</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0</span>
       </span>
     </div>
 
@@ -52,10 +52,32 @@
       <h1>Additional Resources / Readings</h1>
     </div>
 
-<div id="additional-resources--readings" class="section level1"><div class="section level2">
-<h2 id="subheading">subheading<a class="anchor" aria-label="anchor" href="#subheading"></a></h2>
+<div id="additional-resources--readings" class="section level1">
+<div class="section level2">
+<h2 id="troubleshooting">Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting"></a></h2>
+<p>Having build problems? You may need to update <code>{{blogdown}}</code> or <code>{{Hugo}}</code> 1. Install the latest version of blogdown. <code>{r, eval = FALSE} install.packages("blogdown")</code> 2. Use blogdown to install Hugo. <code>{r, eval = FALSE} blogdown::install_hugo()</code> 3. Open <code>.Rprofile</code> and set the hugo version to the version you just installed. 4. Session -&gt; Restart R. 5. Update the <code>renv</code> snapshot. <code>{r, eval = FALSE} renv::snapshot()</code> 6. Test <code>{r, eval = FALSE} blogdown::serve_site()</code> 7. Commit and Push.</p>
+</div>
+<div class="section level2">
+<h2 id="reference-documentation">Reference Documentation<a class="anchor" aria-label="anchor" href="#reference-documentation"></a></h2>
 <ul><li>
-<a href="URL">“resource name”</a><ul><li>short description</li></ul></li></ul></div></div>
+<a href="https://hugo-apero-docs.netlify.app/" class="external-link">“Hugo Apéro: A Hugo theme you’ll want to hang out with”</a><ul><li>Documentation Site for the Hugo Apéro theme.</li></ul></li>
+<li>
+<a href="https://rstudio.github.io/renv/articles/renv.html" class="external-link">“Introduction to renv”</a><ul><li>A starting guide for the <code>{{renv}}</code> package.</li></ul></li>
+<li>
+<a href="https://bookdown.org/yihui/blogdown/" class="external-link">“blogdown: Creating Websites with R Markdown”</a><ul><li>The book on <code>{{blogdown}}</code>
+</li></ul></li>
+</ul></div>
+<div class="section level2">
+<h2 id="guides">Guides<a class="anchor" aria-label="anchor" href="#guides"></a></h2>
+<ul><li>
+<a href="https://usethis.r-lib.org/articles/git-credentials.html" class="external-link">“Managing Git(Hub) Credentials”</a><ul><li>Instructions to set up GitHub credentials for use with <code>{{usethis}}</code>
+</li></ul></li>
+<li>
+<a href="https://happygitwithr.com/" class="external-link">“Happy Git and GitHub for the useR”</a><ul><li>Detailed instructions and workflows for installing Git, connecting it with GitHub, and configuring RStudio to work with Git and GitHub</li></ul></li>
+<li>
+<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" class="external-link">“Markdown Cheatsheet”</a><ul><li>A guide from Adam Pritchard on formatting of Markdown documents</li></ul></li>
+</ul></div>
+</div>
 
   </div>
 
@@ -72,7 +94,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.9000.</p>
 </div>
 
       </footer></div>

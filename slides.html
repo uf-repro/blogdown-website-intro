@@ -17,12 +17,15 @@ class: inverse, center, middle
 # Creating a Personal Website (Using Blogdown)
 ### Hao Ye
 ### Health Science Center Libraries, University of Florida
-### (updated: 2022-06-20)
+### (updated: 2022-07-11)
 
 ---
 # Motivations
 
-* because
+* You would like a professional-looking website to present yourself.
+* You don't want to spend time/money designing something completely custom.
+* You want to use or learn github / blogdown.
+* You want to make blogposts using R Markdown.
 
 ---
 # Prerequisites
@@ -46,23 +49,207 @@ By the end of the workshop, participants will be able to:
 ---
 class: inverse, center, middle
 
-# Subheading
+# Setup
 
 ---
-# Topic
+# Required Packages
 
-Description
 
---
-## So what?
+```r
+install.packages(c("usethis"
+                   "blogdown", 
+                   "renv"))
+```
 
-* reason!
-* another reason!
+These packages and their included dependencies will have all the tools that we need to get started.
 
 ---
+# Git and RStudio
 
-&lt;img src="image.jpg" title="Alt Text: A tan and white dog (retriever mix) is lying on a tile floor and looking up at the camera with his mouse open, seemingly happy. There is a food container on his body with the label 'Tzatziki' visible. (This is a visual pun on the dog's name, Falafel)" alt="Alt Text: A tan and white dog (retriever mix) is lying on a tile floor and looking up at the camera with his mouse open, seemingly happy. There is a food container on his body with the label 'Tzatziki' visible. (This is a visual pun on the dog's name, Falafel)" width="70%" /&gt;
+RStudio is not required, but does make some steps easier, so I strongly recommend it.
 
+If you have not yet configured Git and GitHub for use from within RStudio, check out these guides:
+* ["Happy Git and GitHub for the useR"](https://happygitwithr.com/)
+* ["Managing Git(Hub) Credentials"](https://usethis.r-lib.org/articles/git-credentials.html)
+
+---
+# Install Hugo
+
+Hugo is a static site generator that we will use. This code from the blogdown package will install the latest version and make it available to us.
+
+
+```r
+blogdown::install_hugo()
+```
+
+---
+class: inverse, center, middle
+
+# Creating a new site
+
+---
+# Choose a name
+
+We are going to use GitHub Pages to host our website.
+
+The address will be https://{username}.github.io/{repo}
+  e.g for my username `ha0ye` and repo `my-site`, the eventual website address will be https://ha0ye.github.io/my-site/
+
+You can also host at https://{username}.github.io/ ; choose `{username}.github.io` as the repo name.
+
+---
+# New RStudio Project
+
+1. Open RStudio.
+2. `File` -&gt; `New Project`
+3. Select `New Directory`
+4. Use the name previously chosen, set the local directory, and `Create Project`.
+
+---
+# Create Blogdown Site
+
+
+```r
+blogdown::new_site(theme = "hugo-apero/hugo-apero", 
+                   format = "toml",
+                   sample = FALSE,
+                   empty_dirs = TRUE)
+```
+
+---
+# Set `baseURL`
+
+Open `config.toml`.
+
+There are a number of configuration options here.
+Right now, set baseURL to the eventual URL of your site.
+
+For example:
+```
+baseURL = "https://ha0ye.github.io/blogdown-demo"
+```
+
+---
+# Activate renv
+
+The `renv` package will capture all the needed packages to build our website and record this information in configuration files that GitHub will use.
+
+
+```r
+renv::init()
+```
+
+---
+# Setup GitHub Actions
+
+We need to give GitHub instructions on how to build our website, and there is a premade script for us to use.
+
+
+```r
+usethis::use_github_action("blogdown")
+```
+
+---
+# Commit and Push
+
+These commands will enable Git for this project, and then push it to a new repo on GitHub.
+
+
+```r
+usethis::use_git()
+usethis::use_github()
+```
+
+---
+class: middle, center
+
+# Demo
+
+---
+class: inverse, center, middle
+
+# Technical Machinery
+
+---
+# Hugo
+
+Hugo is a **static site generator**. (there are many other applications that do similar things)
+
+It combines your content with a set of theme/style files to create a static HTML webpage.
+
+*You can create content in markdown, and not worry about styling.*
+
+---
+# Blogdown
+
+The `{{blogdown}}` package combines R Markdown and Hugo.
+* you can author pages using R Markdown (so you can create code examples)
+* it uses Hugo, so you have access to any Hugo theme.
+
+---
+# Blogdown Preview
+
+In your website project, you can preview the webpage with
+
+```r
+blogdown::serve_site()
+```
+
+* You can pop out the panel from RStudio to your web browser.
+* It will re-render when you save changes.
+
+---
+# GitHub Pages
+
+GitHub Pages will host websites from github repos for you, in the `github.io` domain.
+
+*GitHub Pages can also render using __Jekyll__, but we are ignoring it for now.*
+
+For GitHub Pages to work, we need to specify where the website files are. We choose the `gh-pages` branch, where only the rendered web files will be stored.
+
+---
+# GitHub Pages Configuration
+
+In the GitHub page, navigate to "Settings"
+
+&lt;img src="gh-settings.png" title="GitHub Settings page for a repository. The settings tab is circled with a magenta oval and labeled with '1.' in magenta text." alt="GitHub Settings page for a repository. The settings tab is circled with a magenta oval and labeled with '1.' in magenta text." width="70%" /&gt;
+
+---
+# GitHub Pages Configuration
+
+then select "Pages"
+
+&lt;img src="gh-settings-pages.png" title="GitHub Settings page fora repository. The 'Pages' menu item on the left is circled with a magenta oval and labeled with '2.' in magenta text." alt="GitHub Settings page fora repository. The 'Pages' menu item on the left is circled with a magenta oval and labeled with '2.' in magenta text." width="70%" /&gt;
+
+---
+# GitHub Pages Configuration
+
+then select the "gh-pages" branch as the source and click "Save".
+
+&lt;img src="gh-settings-pages-source.png" title="GitHub Settings page for a repository. In the 'Source' setting, the 'Branch' pulldown menu is open and set to 'gh-pages' and is circled with a magenta oval and labeled with '3.' in magenta text." alt="GitHub Settings page for a repository. In the 'Source' setting, the 'Branch' pulldown menu is open and set to 'gh-pages' and is circled with a magenta oval and labeled with '3.' in magenta text." width="70%" /&gt;
+
+---
+# GitHub Actions
+
+GitHub Actions lets us do workflow automation on GitHub.
+
+Our provided script will setup an R environment to build our website, and then put the website files into the `gh-pages` branch.
+
+This means, when we update the contents in GitHub, it will render and update the website automatically.
+
+---
+# Workflow
+
+Suggested website workflow:
+1. start live previews with `blogdown::serve_site()`
+2. make changes to the website
+3. commit changes and push to GitHub.
+
+---
+class: inverse, center, middle
+
+# 
+ 
 ---
 # Thanks
 

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">blogdown.website.intro</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.5.0</span>
       </span>
     </div>
 
@@ -53,10 +53,14 @@
     </div>
 
 <div id="syllabus" class="section level1">
-<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2022-06-20)</p>
+<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2022-07-11)</p>
 <div class="section level2">
 <h2 id="intro">Intro<a class="anchor" aria-label="anchor" href="#intro"></a></h2>
-<ul><li>Motivations<ul><li>because</li></ul></li>
+<ul><li>Motivations<ul><li>You would like a professional-looking website to present yourself.</li>
+<li>You don’t want to spend time/money designing something completely custom.</li>
+<li>You want to use or learn github / blogdown.</li>
+<li>You want to make blogposts using R Markdown.</li>
+</ul></li>
 <li>Prerequisites This lesson assumes you:<ul><li>have some familiarity making <em>repos</em> and <em>commits</em>
 </li>
 <li>know how to synchronize repos from your computer to GitHub Such as via <a href="https://uf-repro.github.io/friendly-github-intro/" class="external-link uri">https://uf-repro.github.io/friendly-github-intro/</a>
@@ -69,11 +73,100 @@
 </ul></li>
 </ul></div>
 <div class="section level2">
-<h2 id="subheading">Subheading<a class="anchor" aria-label="anchor" href="#subheading"></a></h2>
-<ul><li>Topic Description ## So what?<ul><li>reason!</li>
-<li>another reason! <img src="image.jpg" title="Alt Text: A tan and white dog (retriever mix) is lying on a tile floor and looking up at the camera with his mouse open, seemingly happy. There is a food container on his body with the label 'Tzatziki' visible. (This is a visual pun on the dog's name, Falafel)" alt="Alt Text: A tan and white dog (retriever mix) is lying on a tile floor and looking up at the camera with his mouse open, seemingly happy. There is a food container on his body with the label 'Tzatziki' visible. (This is a visual pun on the dog's name, Falafel)" width="70%"> ## Thanks</li>
+<h2 id="setup">Setup<a class="anchor" aria-label="anchor" href="#setup"></a></h2>
+<ul><li>
+<p>Required Packages</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">"usethis"</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>                   <span class="st">"blogdown"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3"></a>                   <span class="st">"renv"</span>))</span></code></pre></div>
+<p>These packages and their included dependencies will have all the tools that we need to get started.</p>
+</li>
+<li>
+<p>Git and RStudio RStudio is not required, but does make some steps easier, so I strongly recommend it. If you have not yet configured Git and GitHub for use from within RStudio, check out these guides:</p>
+<ul><li><a href="https://happygitwithr.com/" class="external-link">“Happy Git and GitHub for the useR”</a></li>
+<li><a href="https://usethis.r-lib.org/articles/git-credentials.html" class="external-link">“Managing Git(Hub) Credentials”</a></li>
 </ul></li>
-<li>Let me know what content you’d like to see</li>
+<li>
+<p>Install Hugo Hugo is a static site generator that we will use. This code from the blogdown package will install the latest version and make it available to us.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">blogdown</span><span class="fu">::</span><span class="fu">install_hugo</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</li>
+</ul></div>
+<div class="section level2">
+<h2 id="creating-a-new-site">Creating a new site<a class="anchor" aria-label="anchor" href="#creating-a-new-site"></a></h2>
+<ul><li><p>Choose a name We are going to use GitHub Pages to host our website. The address will be <a href="https://%7Busername%7D.github.io/%7Brepo%7D" class="external-link uri">https://{username}.github.io/{repo}</a> e.g for my username <code>ha0ye</code> and repo <code>my-site</code>, the eventual website address will be <a href="https://ha0ye.github.io/my-site/" class="external-link uri">https://ha0ye.github.io/my-site/</a> You can also host at <a href="https://%7Busername%7D.github.io/" class="external-link uri">https://{username}.github.io/</a> ; choose <code>{username}.github.io</code> as the repo name.</p></li>
+<li>
+<p>New RStudio Project</p>
+<ol style="list-style-type: decimal"><li>Open RStudio.</li>
+<li>
+<code>File</code> -&gt; <code>New Project</code>
+</li>
+<li>Select <code>New Directory</code>
+</li>
+<li>Use the name previously chosen, set the local directory, and <code>Create Project</code>.</li>
+</ol></li>
+<li>
+<p>Create Blogdown Site</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">blogdown</span><span class="fu">::</span><span class="fu">new_site</span><span class="op">(</span>theme <span class="op">=</span> <span class="st">"hugo-apero/hugo-apero"</span>, </span>
+<span>                   format <span class="op">=</span> <span class="st">"toml"</span>,</span>
+<span>                   sample <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                   empty_dirs <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+</li>
+<li>
+<p>Set <code>baseURL</code> Open <code>config.toml</code>. There are a number of configuration options here. Right now, set baseURL to the eventual URL of your site. For example:</p>
+<pre><code><span><span class="va">baseURL</span> <span class="op">=</span> <span class="st">"https://ha0ye.github.io/blogdown-demo"</span></span></code></pre>
+</li>
+<li>
+<p>Activate renv The <code>renv</code> package will capture all the needed packages to build our website and record this information in configuration files that GitHub will use.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">renv</span><span class="fu">::</span><span class="fu">init</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</li>
+<li>
+<p>Setup GitHub Actions We need to give GitHub instructions on how to build our website, and there is a premade script for us to use.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/github_actions.html" class="external-link">use_github_action</a></span><span class="op">(</span><span class="st">"blogdown"</span><span class="op">)</span></span></code></pre></div>
+</li>
+<li>
+<p>Commit and Push These commands will enable Git for this project, and then push it to a new repo on GitHub.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_git.html" class="external-link">use_git</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_github.html" class="external-link">use_github</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</li>
+<li><p>Demo</p></li>
+</ul></div>
+<div class="section level2">
+<h2 id="technical-machinery">Technical Machinery<a class="anchor" aria-label="anchor" href="#technical-machinery"></a></h2>
+<ul><li><p>Hugo Hugo is a <strong>static site generator</strong>. (there are many other applications that do similar things) It combines your content with a set of theme/style files to create a static HTML webpage. <em>You can create content in markdown, and not worry about styling.</em></p></li>
+<li>
+<p>Blogdown The <code>{{blogdown}}</code> package combines R Markdown and Hugo.</p>
+<ul><li>you can author pages using R Markdown (so you can create code examples)</li>
+<li>it uses Hugo, so you have access to any Hugo theme.</li>
+</ul></li>
+<li>
+<p>Blogdown Preview In your website project, you can preview the webpage with</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">blogdown</span><span class="fu">::</span><span class="fu">serve_site</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<ul><li>You can pop out the panel from RStudio to your web browser.</li>
+<li>It will re-render when you save changes.</li>
+</ul></li>
+<li><p>GitHub Pages GitHub Pages will host websites from github repos for you, in the <code>github.io</code> domain. <em>GitHub Pages can also render using <strong>Jekyll</strong>, but we are ignoring it for now.</em> For GitHub Pages to work, we need to specify where the website files are. We choose the <code>gh-pages</code> branch, where only the rendered web files will be stored.</p></li>
+<li><p>GitHub Pages Configuration In the GitHub page, navigate to “Settings” <img src="gh-settings.png" title="GitHub Settings page for a repository. The settings tab is circled with a magenta oval and labeled with '1.' in magenta text." alt="GitHub Settings page for a repository. The settings tab is circled with a magenta oval and labeled with '1.' in magenta text." width="70%"></p></li>
+<li><p>GitHub Pages Configuration then select “Pages” <img src="gh-settings-pages.png" title="GitHub Settings page fora repository. The 'Pages' menu item on the left is circled with a magenta oval and labeled with '2.' in magenta text." alt="GitHub Settings page fora repository. The 'Pages' menu item on the left is circled with a magenta oval and labeled with '2.' in magenta text." width="70%"></p></li>
+<li><p>GitHub Pages Configuration then select the “gh-pages” branch as the source and click “Save”. <img src="gh-settings-pages-source.png" title="GitHub Settings page for a repository. In the 'Source' setting, the 'Branch' pulldown menu is open and set to 'gh-pages' and is circled with a magenta oval and labeled with '3.' in magenta text." alt="GitHub Settings page for a repository. In the 'Source' setting, the 'Branch' pulldown menu is open and set to 'gh-pages' and is circled with a magenta oval and labeled with '3.' in magenta text." width="70%"></p></li>
+<li><p>GitHub Actions GitHub Actions lets us do workflow automation on GitHub. Our provided script will setup an R environment to build our website, and then put the website files into the <code>gh-pages</code> branch. This means, when we update the contents in GitHub, it will render and update the website automatically.</p></li>
+<li>
+<p>Workflow Suggested website workflow:</p>
+<ol style="list-style-type: decimal"><li>start live previews with <code>blogdown::serve_site()</code>
+</li>
+<li>make changes to the website</li>
+<li>commit changes and push to GitHub.</li>
+</ol></li>
+</ul></div>
+<div class="section level2"><h2 id="section"></h2></div>
+<div class="section level2">
+<h2 id="thanks">Thanks<a class="anchor" aria-label="anchor" href="#thanks"></a></h2>
+<ul><li>Let me know what content you’d like to see</li>
 <li>Contact me for additional questions or consultation requests!</li>
 <li>Check back in on the libguide for more modules and contact info:<ul><li><a href="https://guides.uflib.ufl.edu/reproducibility" class="external-link uri">https://guides.uflib.ufl.edu/reproducibility</a></li></ul></li>
 </ul></div>
@@ -94,7 +187,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.9000.</p>
 </div>
 
       </footer></div>
