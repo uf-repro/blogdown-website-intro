@@ -1,6 +1,6 @@
 Package: blogdown.website.intro
 Title: Creating a Personal Website (Using Blogdown)
-Version: 0.3.0
+Version: 0.5.0
 Authors@R: 
     person(given = "Hao",
            family = "Ye",

@@ -31,6 +31,8 @@ blogdown::serve_site()
 * ["Introduction to renv"](https://rstudio.github.io/renv/articles/renv.html)
   - A starting guide for the `{{renv}}` package.
 
+* ["blogdown: Creating Websites with R Markdown"](https://bookdown.org/yihui/blogdown/)
+  - The book on `{{blogdown}}`
 
 ## Guides
 

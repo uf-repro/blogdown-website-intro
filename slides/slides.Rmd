@@ -192,8 +192,40 @@ class: inverse, center, middle
 # Technical Machinery
 
 ---
+# Hugo
 
+Hugo is a **static site generator**. (there are many other applications that do similar things)
 
+It combines your content with a set of theme/style files to create a static HTML webpage.
+
+*You can create content in markdown, and not worry about styling.*
+
+---
+# Blogdown
+
+The `{{blogdown}}` package combines R Markdown and Hugo.
+* you can author pages using R Markdown (so you can create code examples)
+* it uses Hugo, so you have access to any Hugo theme.
+
+---
+# Blogdown Preview
+
+In your website project, you can preview the webpage with
+```{r, eval = FALSE}
+blogdown::serve_site()
+```
+
+* You can pop out the panel from RStudio to your web browser.
+* It will re-render when you save changes.
+
+---
+# GitHub Pages
+
+GitHub Pages will host websites from github repos for you, in the `github.io` domain.
+
+*GitHub Pages can also render using __Jekyll__, but we are ignoring it for now.*
+
+For GitHub Pages to work, we need to specify where the website files are. We choose the `gh-pages` branch, where only the rendered web files will be stored.
 
 ---
 # GitHub Pages Configuration
@@ -211,20 +243,36 @@ knitr::include_graphics("gh-settings.png", dpi = 200)
 then select "Pages"
 
 ```{r, echo = FALSE, out.width = "70%"}
-#| fig.alt = "GitHub Settings page fora repository. The "Pages" menu item on the left is circled with a magenta oval and labeled with '2.' in magenta text."
+#| fig.alt = "GitHub Settings page fora repository. The 'Pages' menu item on the left is circled with a magenta oval and labeled with '2.' in magenta text."
 knitr::include_graphics("gh-settings-pages.png", dpi = 200)
 ```
 
 ---
 # GitHub Pages Configuration
 
-then select the "gh-pages" branch as the source.
+then select the "gh-pages" branch as the source and click "Save".
 
 ```{r, echo = FALSE, out.width = "70%"}
 #| fig.alt = "GitHub Settings page for a repository. In the 'Source' setting, the 'Branch' pulldown menu is open and set to 'gh-pages' and is circled with a magenta oval and labeled with '3.' in magenta text."
 knitr::include_graphics("gh-settings-pages-source.png", dpi = 200)
 ```
 
+---
+# GitHub Actions
+
+GitHub Actions lets us do workflow automation on GitHub.
+
+Our provided script will setup an R environment to build our website, and then put the website files into the `gh-pages` branch.
+
+This means, when we update the contents in GitHub, it will render and update the website automatically.
+
+---
+# Workflow
+
+Suggested website workflow:
+1. start live previews with `blogdown::serve_site()`
+2. make changes to the website
+3. commit changes and push to GitHub.
 
 ---
 class: inverse, center, middle
