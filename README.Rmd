@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 lesson_title <- "Creating a Personal Website (Using Blogdown)"
 lesson_description <- "Blogdown is an extension of R Markdown, focusing on creating websites. This workshop will operate as a _Getting Started_ guide for creating a website in Blogdown, using GitHub Pages to host the website, and GitHub Actions for continuous deployment."
-lesson_version <- "0.9"
+lesson_version <- "0.9.1"
 lesson_keywords <- c("Open Educational Resources", 
                      "Research Support Skills", 
                      "Literate Programming",

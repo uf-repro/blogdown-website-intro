@@ -45,4 +45,12 @@ Having build problems? You may need to update `{{blogdown}}` or `{{Hugo}}`
 
 * ["Markdown Cheatsheet"](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
   - A guide from Adam Pritchard on formatting of Markdown documents
+
+## Other
+
+* ["Hugo Themes"](https://themes.gohugo.io/)
+  - A collection of website themes that work with Hugo.
   
+* ["Netlify"](https://bookdown.org/yihui/blogdown/netlify.html)
+  - The Netlify section of the blogdown book, which discusses using Netlify to deploy your website.
+
