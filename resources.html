@@ -62,19 +62,13 @@
 <div class="section level2">
 <h2 id="troubleshooting">Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting"></a></h2>
 <p>Having build problems? You may need to update <code>{{blogdown}}</code> or <code>{{Hugo}}</code></p>
-<ol style="list-style-type: decimal"><li>Install the latest version of blogdown.<br>
-```{r, eval = FALSE} install.packages(“blogdown”)</li></ol><pre><code>
-2. Use blogdown to install Hugo.  
-```{r, eval = FALSE}
-blogdown::install_hugo()</code></pre>
+<ol style="list-style-type: decimal"><li>Install the latest version of blogdown.<br></li></ol><pre><code><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"blogdown"</span><span class="op">)</span></span></code></pre>
+<ol start="2" style="list-style-type: decimal"><li>Use blogdown to install Hugo.<br></li></ol><pre><code><span><span class="fu">blogdown</span><span class="fu">::</span><span class="fu">install_hugo</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 <ol start="3" style="list-style-type: decimal"><li>Open <code>.Rprofile</code> and set the hugo version to the version you just installed.</li>
 <li>Session -&gt; Restart R.</li>
-<li>Update the <code>renv</code> snapshot.<br>
-```{r, eval = FALSE} renv::snapshot()</li>
-</ol><pre><code>
-6. Test  
-```{r, eval = FALSE}
-blogdown::serve_site()</code></pre>
+<li>Update the <code>renv</code> snapshot.<br></li>
+</ol><pre><code><span><span class="fu">renv</span><span class="fu">::</span><span class="fu">snapshot</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<ol start="6" style="list-style-type: decimal"><li>Test<br></li></ol><pre><code><span><span class="fu">blogdown</span><span class="fu">::</span><span class="fu">serve_site</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 <ol start="7" style="list-style-type: decimal"><li>Commit and Push.</li></ol></div>
 <div class="section level2">
 <h2 id="reference-documentation">Reference Documentation<a class="anchor" aria-label="anchor" href="#reference-documentation"></a></h2>
