@@ -5,24 +5,24 @@
 Having build problems? You may need to update `{{blogdown}}` or `{{Hugo}}`
 
 1. Install the latest version of blogdown.  
-  ```{r, eval = FALSE}
+  ```
   install.packages("blogdown")
   ```
   
 2. Use blogdown to install Hugo.  
-  ```{r, eval = FALSE}
+  ```
   blogdown::install_hugo()
   ```
   
 3. Open `.Rprofile` and set the hugo version to the version you just installed.
 4. Session -> Restart R.
 5. Update the `renv` snapshot.  
-  ```{r, eval = FALSE}
+  ```
   renv::snapshot()
   ```
   
 6. Test  
-  ```{r, eval = FALSE}
+  ```
   blogdown::serve_site()
   ```
   
