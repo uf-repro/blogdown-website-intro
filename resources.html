@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">blogdown.website.intro</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
       </span>
     </div>
 
@@ -63,14 +63,16 @@
 <h2 id="troubleshooting">Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting"></a></h2>
 <p>Having build problems? You may need to update <code>{{blogdown}}</code> or <code>{{Hugo}}</code></p>
 <ol style="list-style-type: decimal"><li>Install the latest version of blogdown.<br>
-```{r, eval = FALSE} install.packages(“blogdown”)</li></ol><pre><code>2. Use blogdown to install Hugo.  
+```{r, eval = FALSE} install.packages(“blogdown”)</li></ol><pre><code>
+2. Use blogdown to install Hugo.  
 ```{r, eval = FALSE}
 blogdown::install_hugo()</code></pre>
 <ol start="3" style="list-style-type: decimal"><li>Open <code>.Rprofile</code> and set the hugo version to the version you just installed.</li>
 <li>Session -&gt; Restart R.</li>
 <li>Update the <code>renv</code> snapshot.<br>
 ```{r, eval = FALSE} renv::snapshot()</li>
-</ol><pre><code>6. Test  
+</ol><pre><code>
+6. Test  
 ```{r, eval = FALSE}
 blogdown::serve_site()</code></pre>
 <ol start="7" style="list-style-type: decimal"><li>Commit and Push.</li></ol></div>
@@ -93,6 +95,8 @@ blogdown::serve_site()</code></pre>
 <a href="https://happygitwithr.com/" class="external-link">“Happy Git and GitHub for the useR”</a><ul><li>Detailed instructions and workflows for installing Git, connecting it with GitHub, and configuring RStudio to work with Git and GitHub</li></ul></li>
 <li>
 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" class="external-link">“Markdown Cheatsheet”</a><ul><li>A guide from Adam Pritchard on formatting of Markdown documents</li></ul></li>
+<li>
+<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites" class="external-link">“About GitHub Pages”</a><ul><li>documentation on GitHub Pages; this link goes specifically to information about how the username and reponame are transformed into the URL</li></ul></li>
 </ul></div>
 <div class="section level2">
 <h2 id="other">Other<a class="anchor" aria-label="anchor" href="#other"></a></h2>
