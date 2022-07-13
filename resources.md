@@ -8,20 +8,24 @@ Having build problems? You may need to update `{{blogdown}}` or `{{Hugo}}`
   ```{r, eval = FALSE}
   install.packages("blogdown")
   ```
+  
 2. Use blogdown to install Hugo.  
   ```{r, eval = FALSE}
   blogdown::install_hugo()
   ```
+  
 3. Open `.Rprofile` and set the hugo version to the version you just installed.
 4. Session -> Restart R.
 5. Update the `renv` snapshot.  
   ```{r, eval = FALSE}
   renv::snapshot()
   ```
+  
 6. Test  
   ```{r, eval = FALSE}
   blogdown::serve_site()
   ```
+  
 7. Commit and Push.
 
 ## Reference Documentation
@@ -45,6 +49,9 @@ Having build problems? You may need to update `{{blogdown}}` or `{{Hugo}}`
 
 * ["Markdown Cheatsheet"](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
   - A guide from Adam Pritchard on formatting of Markdown documents
+
+* ["About GitHub Pages"](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites)
+  - documentation on GitHub Pages; this link goes specifically to information about how the username and reponame are transformed into the URL
 
 ## Other
 
