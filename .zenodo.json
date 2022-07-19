@@ -1,0 +1,25 @@
+{
+  "title": "Creating a Personal Website (Using Blogdown)",
+  "version": "1.0.0",
+  "creators": [
+    {
+      "affiliation": "University of Florida",
+      "name": "Hao Ye",
+      "orcid": "0000-0002-8630-1458"
+    }
+  ],
+  "description": "Blogdown is an extension of R Markdown, focusing on creating websites. This workshop will operate as a _Getting Started_ guide for creating a website in Blogdown, using GitHub Pages to host the website, and GitHub Actions for continuous deployment.",
+  "keywords": [
+    "Open Educational Resources",
+    "Research Support Skills",
+    "Literate Programming",
+    "Blogdown",
+    "Hugo",
+    "GitHub",
+    "GitHub Actions",
+    "Version Control",
+    "Workshop"
+  ],
+  "license": "CC BY 4.0",
+  "upload_type": "lesson"
+}
